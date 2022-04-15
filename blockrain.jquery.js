@@ -249,7 +249,7 @@
         this.autoplay(true);
         this._setupTouchControls(false);
       } else {
-        this._setupControls(false);
+        this._setupControls(true);
         this._setupTouchControls(true);
       }
 
