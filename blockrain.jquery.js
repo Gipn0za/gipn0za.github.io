@@ -249,8 +249,8 @@
         this.autoplay(true);
         this._setupTouchControls(false);
       } else {
-        this._setupControls(true);
-        this._setupTouchControls(false);
+        this._setupControls(false);
+        this._setupTouchControls(true);
       }
 
     },
@@ -1610,6 +1610,7 @@
       game._$touchDrop.unbind('touchstart touchend click');
 
       if( ! game.options.autoplay && enable ) {
+        console.log('trying to enable touch control...');
         game._$touchLeft.show().bind('touchstart click', moveLeft).bind('touchend', endMoveLeft);
         game._$touchRight.show().bind('touchstart click', moveRight).bind('touchend', endMoveRight);
         game._$touchDrop.show().bind('touchstart click', drop).bind('touchend', endDrop);
