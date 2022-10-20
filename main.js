@@ -3118,7 +3118,7 @@ var WEAPON_RARE = 0,
 				helper: "clone",
 				start: function(e, a) {
 					var t, s = $(".ui-draggable-dragging");
-					s.hasClass("img-weapon-main") && s.attr("title") && (t = s.attr("title"), s.attr("src", "https://huiji-public.huijistatic.com/gbf/uploads/5/52/M_1040814800.jpg".replace("%d", t)))
+					s.hasClass("img-weapon-main") && s.attr("title") && (t = s.attr("title"), s.attr("src", "javaScript:huijiToolbox.getImageUrl('M_%d_01.jpg')".replace("%d", t)))
 				}
 			}), $(".tabs").tabs(), $(".radio").buttonset(), $("input[type=button]").button(), $("#dialog").dialog({
 				autoOpen: !1
@@ -3129,7 +3129,7 @@ var WEAPON_RARE = 0,
 		},
 		setTemp: function() {
 			$("#temp-list").html("");
-			for (var e = 0; e < gbf.weapon_data_temp.length; e++) $("#temp-list").append("<li><div class='temp-box'><img src='https://huiji-public.huijistatic.com/gbf/uploads/5/52/M_1040814800.jpg' class='temp-image' data-id='%d' slot_num='%d'><div class='temp-lv'>Lv. %d<br />Slv. %d</div><div class='temp-remove'><button type='button' class='temp-remove' slot_num='%d'><span class='ui-button-icon ui-icon ui-icon-closethick' slot_num='%d'></span></button></div></div></li>".replace(/%d/, gbf.weapon_data_temp[e].id).replace(/%d/, gbf.weapon_data_temp[e].id).replace(/%d/, e).replace(/%d/, gbf.weapon_data_temp[e].lv).replace(/%d/, gbf.weapon_data_temp[e].skill_lv).replace(/%d/, e).replace(/%d/, e));
+			for (var e = 0; e < gbf.weapon_data_temp.length; e++) $("#temp-list").append("<li><div class='temp-box'><img src='javaScript:huijiToolbox.getImageUrl('M_%d_01.jpg')' class='temp-image' data-id='%d' slot_num='%d'><div class='temp-lv'>Lv. %d<br />Slv. %d</div><div class='temp-remove'><button type='button' class='temp-remove' slot_num='%d'><span class='ui-button-icon ui-icon ui-icon-closethick' slot_num='%d'></span></button></div></div></li>".replace(/%d/, gbf.weapon_data_temp[e].id).replace(/%d/, gbf.weapon_data_temp[e].id).replace(/%d/, e).replace(/%d/, gbf.weapon_data_temp[e].lv).replace(/%d/, gbf.weapon_data_temp[e].skill_lv).replace(/%d/, e).replace(/%d/, e));
 			$("#tabs-temp-tab").html("一時領域 (" + e + ")"), $(".temp-image").draggable({
 				appendTo: "body",
 				helper: "clone",
@@ -3159,7 +3159,7 @@ var WEAPON_RARE = 0,
 							g = _.getRare(),
 							d = _.getElement(),
 							f = ("sr" != g && (g = "ssr"), "thumb"),
-							f = "<img class='%s' src='https://huiji-public.huijistatic.com/gbf/uploads/5/52/M_1040814800.jpg' data-id='%d' title='%s'>".replace("%s", f = "LIMITED" === c ? "thumb limited" : f).replace("%d", p).replace("%d", p).replace("%s", _.getName() + "\nskill1:" + _.getSkillName("1", 1) + "\nskill2:" + _.getSkillName("2", 1)),
+							f = "<img class='%s' src='javaScript:huijiToolbox.getImageUrl('M_%d_01.jpg')' data-id='%d' title='%s'>".replace("%s", f = "LIMITED" === c ? "thumb limited" : f).replace("%d", p).replace("%d", p).replace("%s", _.getName() + "\nskill1:" + _.getSkillName("1", 1) + "\nskill2:" + _.getSkillName("2", 1)),
 							p = gbf.get_wapon_category(p);
 						if ("REVENANT" == c) {
 							if (d != gbf.selected_element) continue;
@@ -3386,7 +3386,7 @@ var WEAPON_RARE = 0,
 				var t = 0 | gbf.weapon_data[a].id,
 					s = $(".btn-weapon[set_num=" + a + "]"),
 					l = s.find("img"),
-					l = (l.attr("title") != t && (l.hasClass("img-weapon-main") ? l.attr("src", "images/ls/%d.jpg".replace("%d", t)) : l.attr("src", "https://huiji-public.huijistatic.com/gbf/uploads/5/52/M_1040814800.jpg".replace("%d", t)), l.attr("title", t).attr("data-id", t)), ".prt-weapon-sub"),
+					l = (l.attr("title") != t && (l.hasClass("img-weapon-main") ? l.attr("src", "javaScript:huijiToolbox.getImageUrl('ls_%d_01.jpg')".replace("%d", t)) : l.attr("src", "javaScript:huijiToolbox.getImageUrl('M_%d_01.jpg')".replace("%d", t)), l.attr("title", t).attr("data-id", t)), ".prt-weapon-sub"),
 					t = (1 == a && (l = ".prt-weapon-main"), gbf.weapon_data[a].id),
 					t = new gbf.weapon(t).getMaxLv(),
 					t = (gbf.weapon_data[a].lv > t && (gbf.weapon_data[a].lv = t), $(l + "-status-setting[set_num=" + a + "]")),
